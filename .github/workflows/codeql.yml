@@ -1,3 +1,4 @@
+
 # For most projects, this workflow file will not need changing; you simply need
 # to commit it to your repository.
 #
@@ -19,6 +20,10 @@ on:
     branches: [ "master" ]
   schedule:
     - cron: '36 20 * * 5'
+
+env:
+  NAME: ${{ secret.USER }}
+  PASSWORD: ${{ secret.PASS }}
 
 jobs:
   analyze:
@@ -71,8 +76,8 @@ jobs:
           [
             {
               "id": "nexus",
-              "username": ${{ secret.USER }},
-              "password": ${{ secret.PASS }}
+              "username": $NAME,
+              "password": $PASSWORD
             }
           ]
         profiles: >
