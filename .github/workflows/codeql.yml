@@ -70,7 +70,7 @@ jobs:
         servers: >
           [
             {
-              "id": nexus",
+              "id": "nexus",
               "username": "${env.USER}",
               "password": "${env.PASS}"
             }
