@@ -22,8 +22,8 @@ on:
     - cron: '36 20 * * 5'
 
 env:
-  NAME: ${{ secret.USER }}
-  PASSWORD: ${{ secret.PASS }}
+  NAME: ${{ secrets.USER }}
+  PASSWORD: ${{ secrets.PASS }}
 
 jobs:
   analyze:
