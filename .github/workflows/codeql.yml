@@ -87,10 +87,10 @@ jobs:
           ]
         output_file: C:\Users\abhi-dutta\.m2\settings.xml
 
-    - name: Display File Content
-    - run: |
-        cd C:\Users\abhi-dutta\.m2\settings.xml
-        more settings.xml
+  #  - name: Display File Content
+   # - run: |
+   #     cd C:\Users\abhi-dutta\.m2\settings.xml
+   #     more settings.xml
         
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
