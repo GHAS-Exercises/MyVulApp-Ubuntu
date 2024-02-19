@@ -45,9 +45,53 @@ jobs:
         # Learn more about CodeQL language support at https://aka.ms/codeql-docs/language-support
 
     steps:
+    
+    
     - name: Checkout repository
       uses: actions/checkout@v3
 
+    - name: maven-settings-xml-action
+      uses: whelk-io/maven-settings-xml-action@v22
+      with:
+        repositories: >
+          [
+            {
+          "id": "some-repository",
+          "url": "http://localhost:8081/repository/my-mvn-proxy/",
+            }
+          ]
+        plugin_repositories: >
+          [
+            {
+          "id": "some-plugin-repository",
+          "url": "http://localhost:8081/repository/my-mvn-proxy/",
+            }
+          ]
+        servers: >
+          [
+            {
+              "id": nexus",
+              "username": "${env.USER}",
+              "password": "${env.PASS}"
+            }
+          ]
+        profiles: >
+          [
+            {
+              "id": "nexus",
+            }
+          ]
+        active_profiles: >
+          [
+            "nexus"
+          ]
+        output_file: C:\Users\abhi-dutta\.m2\settings.xml
+
+    - name: Display File Content
+    - run: |
+        cd C:\Users\abhi-dutta\.m2\settings.xml
+        more settings.xml
+        
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v2
