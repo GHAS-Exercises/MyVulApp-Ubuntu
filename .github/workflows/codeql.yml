@@ -79,15 +79,9 @@ jobs:
               "password": "${{ secrets.PASS }}"
             }
           ]
-        profiles: >
-          [
-            {
-              "id": "nexus"
-            }
-          ]
         active_profiles: >
           [
-            "nexus"
+            "github"
           ]
         output_file: .m2\\settings.xml
 
