@@ -57,14 +57,14 @@ jobs:
           [
             {
           "id": "some-repository",
-          "url": "http://localhost:8081/repository/my-mvn-proxy/",
+          "url": "http://localhost:8081/repository/my-mvn-proxy/"
             }
           ]
         plugin_repositories: >
           [
             {
           "id": "some-plugin-repository",
-          "url": "http://localhost:8081/repository/my-mvn-proxy/",
+          "url": "http://localhost:8081/repository/my-mvn-proxy/"
             }
           ]
         servers: >
@@ -78,7 +78,7 @@ jobs:
         profiles: >
           [
             {
-              "id": "nexus",
+              "id": "nexus"
             }
           ]
         active_profiles: >
