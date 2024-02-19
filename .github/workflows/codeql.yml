@@ -75,8 +75,8 @@ jobs:
           [
             {
               "id": "nexus",
-              "username": ${{ secrets.USER }},
-              "password": ${{ secrets.PASS }}
+              "username": "${{ secrets.USER }}",
+              "password": "${{ secrets.PASS }}"
             }
           ]
         profiles: >
