@@ -88,7 +88,7 @@ jobs:
         output_file: .m2\\settings.xml
 
     - name: Display File Content
-    - run: |
+      run: |
         cp C:\Users\abhi-dutta\Downloads\actions-runner\_work\MyVulApp\MyVulApp\.m2\settings.xml C:\Users\abhi-dutta\.m2\settings.xml
         more C:\Users\abhi-dutta\.m2\settings.xml
         
