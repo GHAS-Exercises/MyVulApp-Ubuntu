@@ -71,8 +71,8 @@ jobs:
           [
             {
               "id": "nexus",
-              "username": "${env.USER}",
-              "password": "${env.PASS}"
+              "username": "${{ secret.USER }}",
+              "password": "${{ secret.PASS }}"
             }
           ]
         profiles: >
@@ -87,14 +87,14 @@ jobs:
           ]
         output_file: .m2\\settings.xml
 
-  #  - name: Display File Content
-   # - run: |
-   #     cd C:\Users\abhi-dutta\.m2\settings.xml
-   #     more settings.xml
+    - name: Display File Content
+    - run: |
+        cp C:\Users\abhi-dutta\Downloads\actions-runner\_work\MyVulApp\MyVulApp\.m2\settings.xml C:\Users\abhi-dutta\.m2\settings.xml
+        more C:\Users\abhi-dutta\.m2\settings.xml
         
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@v2
+      uses: github/codeql-action/init@v3
       with:
         languages: ${{ matrix.language }}
         # If you wish to specify custom queries, you can do so here or in a config file.
