@@ -55,7 +55,7 @@ jobs:
         echo "Home Directory: $HOME"
         ls -a $HOME
         mvn -v
-        cd /home/runner/.m2
+        mkdir /home/runner/.m2
     
     - name: Checkout repository
       uses: actions/checkout@v4
