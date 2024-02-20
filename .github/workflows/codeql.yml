@@ -49,7 +49,11 @@ jobs:
         # Learn more about CodeQL language support at https://aka.ms/codeql-docs/language-support
 
     steps:
-    
+    - name: Check Home Directory
+      run: |
+        pwd
+        echo "Home Directory: $HOME"
+        ls -a $HOME
     
     - name: Checkout repository
       uses: actions/checkout@v4
@@ -85,12 +89,13 @@ jobs:
           ]
         output_file: .m2\\settings.xml
 
-    - name: Display File Content
-      run: |
-        cp C:\Users\abhi-dutta\Downloads\actions-runner\_work\MyVulApp\MyVulApp\.m2\settings.xml C:\Users\abhi-dutta\.m2\settings.xml
-        more C:\Users\abhi-dutta\.m2\settings.xml
-        
-    # Initializes the CodeQL tools for scanning.
+   # - name: Display File Content
+    #  run: |
+    #    cp C:\Users\abhi-dutta\Downloads\actions-runner\_work\MyVulApp\MyVulApp\.m2\settings.xml C:\Users\abhi-dutta\.m2\settings.xml
+    #    more C:\Users\abhi-dutta\.m2\settings.xml
+
+
+     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
       with:
@@ -106,7 +111,7 @@ jobs:
     # Autobuild attempts to build any compiled languages (C/C++, C#, Go, Java, or Swift).
     # If this step fails, then you should remove it and run the build manually (see below)
     - name: Autobuild
-      uses: github/codeql-action/autobuild@v3
+      #uses: github/codeql-action/autobuild@v3
 
     # ℹ️ Command-line programs to run using the OS shell.
     # 📚 See https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsrun
@@ -114,10 +119,11 @@ jobs:
     #   If the Autobuild fails above, remove it and uncomment the following three lines.
     #   modify them (or add more) to build your code if your project, please refer to the EXAMPLE below for guidance.
 
-    # - run: |
-    #     echo "Run, Build Application using script"
-    #     ./location_of_script_within_repo/buildscript.sh
+      run: |
+         echo "Run, Build Application using script"
+         mvn help:evaluate -Dexpression=settings.localRepository
 
+         
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
       with:
