@@ -92,7 +92,7 @@ jobs:
 
     - name: Display File Content
       run: |
-        cp/home/runner/work/MyVulApp-Ubuntu/MyVulApp-Ubuntu/.m2/settings.xml /home/runner/.m2/
+        cp /home/runner/work/MyVulApp-Ubuntu/MyVulApp-Ubuntu/.m2/settings.xml /home/runner/.m2/
         cat /home/runner/.m2/settings.xml
 
 
