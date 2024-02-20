@@ -88,12 +88,12 @@ jobs:
           [
             "github"
           ]
-        output_file: .m2\\settings.xml
+        output_file: .m2/settings.xml
 
-   # - name: Display File Content
-    #  run: |
-    #    cp C:\Users\abhi-dutta\Downloads\actions-runner\_work\MyVulApp\MyVulApp\.m2\settings.xml C:\Users\abhi-dutta\.m2\settings.xml
-    #    more C:\Users\abhi-dutta\.m2\settings.xml
+    - name: Display File Content
+      run: |
+        cp/home/runner/work/MyVulApp-Ubuntu/MyVulApp-Ubuntu/.m2/settings.xml /home/runner/.m2/
+        cat /home/runner/.m2/settings.xml
 
 
      # Initializes the CodeQL tools for scanning.
