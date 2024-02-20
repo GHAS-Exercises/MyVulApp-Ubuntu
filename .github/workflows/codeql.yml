@@ -54,7 +54,7 @@ jobs:
         pwd
         echo "Home Directory: $HOME"
         ls -a $HOME
-        mavn -v
+        mvn -v
     
     - name: Checkout repository
       uses: actions/checkout@v4
